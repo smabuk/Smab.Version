@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Smab.Version</PackageId>
+    <Title>Smab.Version</Title>
+    <AssemblyName>Smab.Version</AssemblyName>
+    <Product>Smab.Version</Product>
+    <RootNamespace>Smab.Version</RootNamespace>
+    <Authors>Simon Brookes (@smabuk)</Authors>
+    <Company></Company>
+    <Description>Setting versions in NuGet packages via a pipeline</Description>
+    <Copyright>© 2017-2019 Simon Brookes</Copyright>
+    <Summary>Setting versions in NuGet packages via a pipeline</Summary>
+    <PackageProjectUrl>https://github.com/smabuk/Smab.Version</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/smabuk/Smab.Version</RepositoryUrl>
+    <PackageTags>nuget, versions, azure pileines</PackageTags>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <VersionPrefix>1.2.3</VersionPrefix>
+    <Preview></Preview>
+    <VersionSuffix Condition="'$(Preview)' != ''">$(Preview).$([System.DateTime]::get_Now().get_Year())$([System.DateTime]::get_Now().get_Month().ToString("D2"))$([System.DateTime]::get_Now().get_Day().ToString("D2"))-$([System.DateTime]::get_Now().get_Hour().ToString("D2"))$([System.DateTime]::get_Now().get_Minute().ToString("D2"))</VersionSuffix>
+  </PropertyGroup>
+
+</Project>
