@@ -23,8 +23,9 @@
     <PackageTags>nuget, versions, azure pileines</PackageTags>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
     <VersionPrefix>1.2.5</VersionPrefix>
-    <Preview>Preview1</Preview>
-    <VersionSuffix Condition="'$(Preview)' != ''">$(Preview).$([System.DateTime]::get_Now().get_Year())$([System.DateTime]::get_Now().get_Month().ToString("D2"))$([System.DateTime]::get_Now().get_Day().ToString("D2"))-$([System.DateTime]::get_Now().get_Hour().ToString("D2"))$([System.DateTime]::get_Now().get_Minute().ToString("D2"))</VersionSuffix>
+    <Preview>Preview2</Preview>
+    <VersionSuffix Condition="'$(Preview)' != '' And '$(BUILD_BUILDNUMBER)' == ''">$(Preview).$([System.DateTime]::get_Now().get_Year())$([System.DateTime]::get_Now().get_Month().ToString("D2"))$([System.DateTime]::get_Now().get_Day().ToString("D2"))-$([System.DateTime]::get_Now().get_Hour().ToString("D2"))$([System.DateTime]::get_Now().get_Minute().ToString("D2"))</VersionSuffix>
+    <VersionSuffix Condition="'$(Preview)' != '' And '$(BUILD_BUILDNUMBER)' != ''">$(BUILD_BUILDNUMBER)+$(BUILD_SOURCEVERSION)</VersionSuffix>
   </PropertyGroup>
 
 </Project>
